@@ -1,0 +1,53 @@
+{% extends '@Subject/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="algo container">
+        <div class="row">
+            <h1>Welcome to the algorithm test</h1>
+            <h2><i class="small material-icons">access_time</i> 30 minutes</h2>
+            <p>Complete the <code>generate</code> method of the class <code>AppBundle\Service\PartsGenerator</code>.</p>
+            <p class="orange-text">You should not have to modify any other file for this step.</p>
+
+            <p>Good Luck !</p>
+        </div>
+        <div class="row">
+            <div class="row exo">
+                <div class="row ennoncé">
+                    <div class="row">
+                        <h2>States</h2>
+                        <p> The <code>generate</code> method will return an array of sets (number of sets given by the
+                            parameter), each set is an array that contains some parts.<br/>
+                            You will put 1 to 10 parts (randomly) to your set. A part has a reference which is a random
+                            integer with 6 digits. (Hint : use PHP function <code>mt_rand</code>).
+                        </p>
+                        <p>Input<br/>
+                            n : <i>a positiv number</i>
+                        </p>
+                        <p>Output <br/>
+                            An Array containing <b>n</b> Array of 1 to 10 integer with 6 digits.
+                        </p>
+
+                        <p>Exemple :</p>
+                        <p>If input is 3, output should be :
+                            <pre style="text-align: left">
+                                [
+                                    [1321546,100101,512135,632514,654321],
+                                    [876543,234567],
+                                    [159638,745236,124865,978963],
+                                ]
+                            </pre>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="row">
+            <h5>Lancer les tests:</h5>
+            <p>Dans le dossier de ton projet, via le terminal, exécute la commande <span class="commande_style">php phpunit-6.0.phar tests/SubjectBundle/Controller/AlgoControllerTest.php</span></p>
+        </div>
+        -->
+    </div>
+
+{% endblock %}

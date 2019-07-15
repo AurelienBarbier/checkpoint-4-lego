@@ -1,0 +1,57 @@
+{% extends '@Subject/layout.html.twig' %}
+
+{% block body %}
+    <div class="container sf3">
+        <div class="row ennonce">
+            <h1>Symfony</h1>
+            <div class="row">
+                <p class="flow-text">You will work in <b>AppBundle</b><br/>
+                As christmas is coming, we are going to play with Lego this morning, and use many random operators.
+                    Each Lego set will have a reference and a list of parts that are used to build this set.
+                    For instance : the Lego set 10214 Tower Bridge contains 4287 parts (you can find the part list
+                    <a href="https://www.bricklink.com/catalogItemInv.asp?S=10214-1">here</a>).<br/>
+                <i><i class=" material-icons">warning</i> Note : In this exercice, a part is used in one set only.</i><br/>
+
+                <img src="https://www.bricklink.com/SL/10214-1.jpg?1" alt="lego"/>
+            </div>
+        </div>
+        <div class="instruction left-align row">
+            <h2>TODO</h2>
+            <p>A small site with a page that list all Lego set and another page that edit/view a particular Lego set and its parts references/quantities.</p>
+            </p>
+            <h3>1. Entities | <i class="small material-icons">access_time</i> 20 min</h3>
+            <p>Create Entities :</p>
+            <ol>
+                <li>Part with a "reference" property (int), a "quantity" property (int), and a "legoSet" relationship.</li>
+                <li>LegoSet with a "reference" property (int), a "name" property (string, nullable), and a "parts" property, which will be a collection of "Part".</li>
+            </ol>
+            <h3>2. Fixture | <i class="small material-icons">access_time</i> 40 min</h3>
+            <p>Create a fixture that will generate 1000 sets, thanks to the Algorithm. Use it as a Symfony Service. Each line of the array represents the references of the parts of this set. Furthermore, you will generate the reference property of each LegoSet with a random integer with 5 digits. You will also have to set the part quantity : put a random quantity between 1 and 100.</p>
+
+            <p><i><i class=" material-icons">warning</i> Note : if you could not solve the algorithm, you can put the same reference for all LegoSet in your fixture.</i></p>
+            <h3>3. Controller and routes | <i class="small material-icons">access_time</i> 2h30</h3>
+            <ol>
+                <li>The first route /lego/page/{page} will display a paginated list of LegoSet, and therefore will have a page parameter. This parameter is an optional number and its default value is 1. It will display all LegoSet of the database, paginated (with at least a page number and a total page number). The number of set diplayed per page (for instance 10) will be stored in app/config/parameter.yml. A click on a set will link to the second route.</li>
+            <li>        The second route /lego/edit/{id} will display/edit the part of one set and therefore will have an id mandatory parameter.This parameter is a mandatory number. On this route, you can edit the selected lego set in an hydrated form, as well as all parts it contains, by using nested FormType.</li>
+            </ol>
+            <p><i> <i class=" material-icons">warning</i> Note : Those two routes are subroutes of path /lego/. This path should appear only once in your code, so it can be changed easily.</i></p>
+
+
+            <h3>4. Form Validation (Bonus)</h3>
+            <p>The LegoSet name must contains at least 6 characters, and maximum 20 characters .</p>
+
+        </div>
+        <div class="row line_divider">
+            <p>Tu es libre d'utiliser le/les frameworks css/js de ton choix, aucune librairie n'est chargée</p>
+            <p>Pour le design, fais comme tu le sens, ça doit juste être "joli" (si tu as du temps, met un petit footer, barre de nav...) ;-)</p>
+            <p>Utilise le fichier base.html.twig si tu en as besoin, tout le reste doit se trouver dans ton bundle</p>
+            <p>Bon courage !</p>
+        </div>
+        <div class="row">
+            <div class="col m12 button_homepage">
+                <a href="{{ path('homepage') }}" class="waves-effect waves-light btn">Retour à la page d'accueil</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
